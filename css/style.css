@@ -103,27 +103,27 @@ main h2 {
 }
 
 /*********  SECTION *********/
-main section#intro div#imagen-intro {
+main div#intro div#imagen-intro {
   text-align: center;
 }
-main section#intro img {
+main div#intro img {
   max-width: 80%;
 }
 
-main section#intro h2 {
+main div#intro h2 {
   margin-top: 0;
 }
 
 /*********  ARTICLES *********/
-section#articulos-destacados article {
+div#articulos-destacados div.articulo {
   text-align: center;
 }
 
-section#articulos-destacados article img {
+div#articulos-destacados div.articulo img {
   max-width: 50%;
 }
 
-section#articulos-destacados article p {
+div#articulos-destacados div.articulo p {
   margin-top: 0px;
 }
 
@@ -193,26 +193,26 @@ footer div.redes-sociales img {
 
   /*********  INTRO *********/
 
-  main section#intro {
+  main div#intro {
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 15px;
   }
 
-  main section#intro img {
+  main div#intro img {
     object-fit: cover;
     width: 100%;
     max-width: 100%;
   }
 
   /*********  ARTICULOS *********/
-  section#articulos-destacados {
+  div#articulos-destacados {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 
-  section#articulos-destacados article img {
+  div#articulos-destacados div.articulo img {
     max-width: 200px;
   }
 
