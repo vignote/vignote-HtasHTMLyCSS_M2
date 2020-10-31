@@ -55,14 +55,17 @@ main nav {
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  top: 50px;
+  top: 0px;
   left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 main nav ul {
   width: 150px;
   padding-left: 0;
-  margin: 0;
+  margin-top: 35px;
 }
 
 main nav ul li:hover {
@@ -150,7 +153,7 @@ footer div.redes-sociales img {
 /***********************************************************************************/
 /***********************************************************************************/
 /***********************************************************************************/
-/*                                    MOBILE PHONE                                 */
+/*                                    DESKTOP SCREEN                               */
 /***********************************************************************************/
 
 @media (min-width: 600px) {
@@ -172,6 +175,7 @@ footer div.redes-sociales img {
     opacity: 1;
     pointer-events: auto;
     position: initial;
+    background-color: unset;
   }
 
   main nav ul {
@@ -228,20 +232,4 @@ footer div.redes-sociales img {
   footer div.redes-sociales {
     justify-self: end;
   }
-
-  /*
-  footer {
-    height: unset;
-    grid-template-columns: 1fr;
-  }
-
-  footer div.contacto {
-    justify-self: center;
-    text-align: center;
-  }
-
-  footer div.redes-sociales {
-    justify-self: center;
-  }
-  */
 }
