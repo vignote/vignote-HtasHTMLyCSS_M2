@@ -61,6 +61,7 @@ main nav {
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
   transition: all 0.5s;
+  z-index: 2;
 }
 
 main nav ul {
@@ -145,10 +146,37 @@ div.category-list div.item div.title {
 }
 
 div.category-list div.item div.title a:hover {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
-div.category-list div.item div.description img {
+
+div.item div.description img {
   max-width: 60%;
+}
+
+div.item div.description div.cover {
+  text-align: center;
+}
+
+/*********  OTROS *********/
+a#go-to-category {
+  margin-top: -5px;
+  z-index: 1;
+  position: absolute;
+  text-decoration: none;
+}
+
+a#buy-button {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background-color: var(--dark-bg-color);
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+}
+
+a#buy-button:hover {
+  transform: scale(1.1);
 }
 
 /***********************************************************************************/
