@@ -60,6 +60,7 @@ main nav {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.5s;
 }
 
 main nav ul {
@@ -100,6 +101,7 @@ main nav ul li#selected {
 
 main h2 {
   text-decoration: underline;
+  text-align: center;
 }
 
 /*********  SECTION *********/
@@ -117,6 +119,7 @@ main div#intro h2 {
 /*********  ARTICLES *********/
 div#articulos-destacados div.articulo {
   text-align: center;
+  margin: 0px 10px;
 }
 
 div#articulos-destacados div.articulo img {
@@ -125,6 +128,27 @@ div#articulos-destacados div.articulo img {
 
 div#articulos-destacados div.articulo p {
   margin-top: 0px;
+}
+
+/*********  LISTADO CATEGORÍA *********/
+div.category-list {
+  margin-left: 15px;
+}
+div.category-list div.item {
+  list-style-type: disc;
+  display: list-item;
+}
+
+div.category-list div.item div.title {
+  font-weight: bold;
+  margin: 25px 0px 10px;
+}
+
+div.category-list div.item div.title a:hover {
+  font-size: 1.2rem;
+}
+div.category-list div.item div.description img {
+  max-width: 60%;
 }
 
 /***********************************************************************************/
@@ -141,26 +165,28 @@ footer a {
   color: var(--font-color);
 }
 
-footer a:hover {
-  font-weight: bold;
-}
-
 footer div.redes-sociales img {
   max-width: 40px;
   margin: 5px 10px;
 }
 
 /***********************************************************************************/
+a {
+  color: var(--font-color);
+}
+a:hover {
+  font-weight: bold;
+}
+a:hover img {
+  transform: scale(1.01);
+}
+
 /***********************************************************************************/
 /***********************************************************************************/
 /*                                    DESKTOP SCREEN                               */
 /***********************************************************************************/
 
 @media (min-width: 600px) {
-  body {
-    max-width: 1000px;
-  }
-
   header h1 {
     text-align: center;
     display: block;
@@ -205,7 +231,7 @@ footer div.redes-sociales img {
     max-width: 100%;
   }
 
-  /*********  ARTICULOS *********/
+  /*********  ARTICULOS DESTACADOS *********/
   div#articulos-destacados {
     display: flex;
     flex-wrap: wrap;
@@ -214,6 +240,17 @@ footer div.redes-sociales img {
 
   div#articulos-destacados div.articulo img {
     max-width: 200px;
+  }
+
+  /*********  LISTADO CATEGORÍA *********/
+
+  div.category-list div.item div.description {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+
+  div.category-list div.item div.description img {
+    max-width: 150px;
   }
 
   /*********  FOOTER *********/
@@ -231,5 +268,21 @@ footer div.redes-sociales img {
 
   footer div.redes-sociales {
     justify-self: end;
+  }
+}
+
+/***********************************************************************************/
+/***********************************************************************************/
+/*                                 WIDE DESKTOP SCREEN                             */
+/***********************************************************************************/
+@media (min-width: 1000px) {
+  body {
+    max-width: 1300px;
+  }
+
+  div.category-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
   }
 }
