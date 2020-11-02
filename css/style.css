@@ -68,15 +68,23 @@ main nav#main-menu {
   transition: all 0.5s;
 }
 
-main nav#main-menu ul {
-  width: 150px;
-  padding-left: 0;
+main nav#main-menu > ul {
+  width: 200px;
   margin-top: 35px;
+}
+
+main nav ul {
+  padding-left: 0;
+  width: 190px;
+}
+
+main nav h3 {
+  margin-bottom: 2px;
+  text-decoration: underline;
 }
 
 main nav ul li:hover {
   background-color: var(--dark-bg-color);
-  font-weight: bold;
 }
 
 #main-menu:target {
@@ -86,7 +94,6 @@ main nav ul li:hover {
 
 main nav ul li {
   list-style-type: none;
-  min-width: 100px;
   border: 1px solid black;
   padding: 5px;
   text-align: center;
@@ -102,6 +109,10 @@ main nav ul li a {
 main nav ul li.selected {
   background-color: var(--dark-bg-color);
   font-weight: bold;
+}
+
+.contextual-list {
+  margin-top: 10px;
 }
 
 main h2 {
@@ -154,7 +165,7 @@ div.category-list div.item div.title a:hover {
 }
 
 div.item div.description img {
-  max-width: 60%;
+  max-width: 50%;
 }
 
 div.item div.description div.cover {
@@ -232,8 +243,15 @@ a:hover img {
   main nav {
     opacity: 1;
     pointer-events: auto;
-    position: initial;
     background-color: unset;
+  }
+
+  main nav ul li:hover {
+    transform: scale(1.1);
+  }
+
+  main nav#main-menu {
+    position: initial;
   }
 
   main nav#main-menu ul {
@@ -245,8 +263,12 @@ a:hover img {
     margin: 0px 0px 30px 0px;
   }
 
-  main nav ul li:hover {
-    transform: scale(1.1);
+  main > #contextual-menu {
+    top: 150px;
+  }
+
+  #go-to-category {
+    display: none;
   }
 
   /*********  INTRO *********/

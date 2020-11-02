@@ -14,27 +14,30 @@
       <h1>El Mundo de Oscar Wilde</h1>
     </header>
     <main>
+      <!-- Menú Principal -->
       <nav class="menu" id="main-menu">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-          <li class="selected"><a href="../cuentos.html">Cuentos</a></li>
+          <li class="selected" id="up_category">
+            <a href="../cuentos.html">Cuentos</a>
+          </li>
           <li><a href="../novelas.html">Novelas</a></li>
-          <li><a href="../frases.html">Frases Celebres</a></li>
           <li><a href="../contacta.html">Contacta</a></li>
         </ul>
       </nav>
 
-      <nav class="menu" id="contextual-menu">
-        <ul>
+      <a id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
+      <!-- Menú secundario al resto de páginas detalles-->
+      <nav class="menu" id="contextual-menu" description="Listado de Cuentos">
+        <ul class="contextual-list">
           <li class="selected">
-            <a href="el_principe_feliz.html">El Principe F...</a>
+            <a href="el_principe_feliz.html">El Principe Feliz</a>
           </li>
-          <li><a href="el_fantasma.html">El Fantasma ...</a></li>
+          <li><a href="el_fantasma.html">El Fantasma de Canterville</a></li>
+          <li><a href="el_crimen.html">El Crimen de Lord Arthur Saville</a></li>
+          <li><a href="el_retrato_del_sr.html">El retrato de W.H.</a></li>
         </ul>
       </nav>
-
-      <a id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
-
       <div class="item">
         <div class="title">
           <h2>El Principe Feliz y Otros Cuentos</h2>
@@ -94,6 +97,6 @@
       </div>
     </footer>
 
-    <script src="../../js/index.js"></script>
+    <script src="../../js/load_submenu.js"></script>
   </body>
 </html>
