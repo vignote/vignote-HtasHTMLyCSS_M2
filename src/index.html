@@ -2,7 +2,8 @@
 <html lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-
+    <meta name="description" content="Página de Fans de Oscar Wilde" />
+    <meta name="author" content="Alejandro Rodriguez Vignote" />
     <title>Oscar Wilde Fun Page</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
@@ -11,7 +12,7 @@
       <a href="#main-menu" id="hamburguer-menu"
         ><img id="menu-icon" src="../img/menu.png" alt="Menú"
       /></a>
-      <h1>El Mundo de Oscar Wilde</h1>
+      <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
     </header>
     <main>
       <nav class="menu" id="main-menu">
@@ -24,21 +25,24 @@
       </nav>
 
       <div id="intro">
-        <div id="imagen-intro">
-          <img src="../img/oscar_wilde.jpg" alt="Oscar Wilde" />
-        </div>
+        <figure id="imagen-intro">
+          <img src="../img/oscar_wilde.jpg" alt=" Foto de Oscar Wilde" />
+          <figcaption>Imagen de <cite lang="en">Oscar Wilde</cite></figcaption>
+        </figure>
         <div id="descripcion-intro">
           <h2>Una Vida Para Recordar</h2>
           <p>
-            Oscar Wilde no puede pasar al olvido, y por ello hemos creado esta
-            página para poder compartir con vosotros artículos de este
-            maravilloso autor que dejó al mundo con la boca abierta por su
-            increible ingenio y por su comportamiento fuera de lo común.
+            <cite lang="en">Oscar Wilde</cite> no puede pasar al olvido, y por
+            ello hemos creado esta página para poder compartir con vosotros
+            artículos de este maravilloso autor que dejó al mundo con la boca
+            abierta por su increible ingenio y por su comportamiento fuera de lo
+            común.
           </p>
           <p>
-            Oscar Fingal O'Flahertie Wills Wilde​, conocido como Oscar Wilde,
-            fue un escritor, poeta y dramaturgo de origen irlandés.​ Wilde es
-            considerado uno de los dramaturgos más destacados del Londres
+            <span lang="en">Oscar Fingal, O'Flahertie Wills Wilde​,</span>
+            conocido como <cite lang="en">Oscar Wilde</cite>, fue un escritor,
+            poeta y dramaturgo de origen irlandés.<span lang="en"> Wilde</span>
+            es considerado uno de los dramaturgos más destacados del Londres
             victoriano tardío; además, fue una celebridad de la época debido a
             su gran y aguzado ingenio.
           </p>
@@ -48,33 +52,56 @@
       <h2>Artículos Destacados</h2>
       <div id="articulos-destacados">
         <div class="articulo">
-          <a href="cuentos.html"
-            ><img
-              src="../img/el_fantasma_de_canterville.jpg"
-              alt="Foto Portada El Fantasma de Canterville"
-          /></a>
+          <a href="cuentos/el_fantasma.html"
+            ><figure>
+              <img
+                src="../img/el_fantasma_de_canterville.jpg"
+                alt="Foto Portada El Fantasma de Canterville"
+              />
+              <figcaption><cite>El Fantasma de Canterville</cite></figcaption>
+            </figure>
+          </a>
           <p>Precio oferta: 5€</p>
         </div>
         <div class="articulo">
-          <a href="cuentos.html"
-            ><img
-              src="../img/El_principe_feliz_y_otros_cuentos.jpg"
-              alt="Foto Portada el principe feliz y otros cuentosº"
-          /></a>
+          <a href="cuentos/el_principe_feliz.html">
+            <figure>
+              <img
+                src="../img/El_principe_feliz_y_otros_cuentos.jpg"
+                alt="Foto Portada el principe feliz y otros cuentosº"
+              />
+              <figcaption>
+                <cite>El Principe Feliz y Otros Cuentos</cite>
+              </figcaption>
+            </figure>
+          </a>
+
           <p>Precio oferta: 5€</p>
         </div>
         <div class="articulo">
-          <a href="cuentos.html"
-            ><img
-              src="../img/El_retrato_de_Dorian_Gray.jpg"
-              alt="Foto Portada El retrato de Dorian Gray"
-          /></a>
+          <a href="novelas/el_retrato_de_dorian.html">
+            <figure>
+              <img
+                src="../img/El_retrato_de_Dorian_Gray.jpg"
+                alt="Foto Portada El retrato de Dorian Gray"
+              />
+              <figcaption>
+                <cite>El Retrato de <span lang="en">Dorian Gray</span></cite>
+              </figcaption>
+            </figure>
+          </a>
           <p>Precio oferta: 5€</p>
         </div>
         <div class="articulo">
-          <a href="cuentos.html"
-            ><img src="../img/De_profundis.jpg" alt="Foto Portada De profundis"
-          /></a>
+          <a href="novelas/de_profundis.html">
+            <figure>
+              <img
+                src="../img/De_profundis.jpg"
+                alt="Foto Portada De profundis"
+              />
+              <figcaption><cite>De profundis</cite></figcaption>
+            </figure>
+          </a>
           <p>Precio oferta: 5€</p>
         </div>
       </div>
@@ -83,7 +110,10 @@
     <footer>
       <div class="contacto">
         <a href="contacta.html">Contacta</a>
-        <p>Alejandro Rodríguez Vignote 2020 - 2021</p>
+        <p>
+          Alejandro Rodríguez Vignote <time datetime="2020">2020</time> -
+          <time datetime="2021">2021</time>
+        </p>
       </div>
 
       <div class="redes-sociales">
