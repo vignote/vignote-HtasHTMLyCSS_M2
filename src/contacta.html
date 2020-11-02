@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta
+      name="description"
+      content="Formulario de Contacto para escribir al Administrador del sitio Web"
+    />
+    <meta name="author" content="Alejandro Rodriguez Vignote" />
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#main-menu" id="hamburguer-menu"
+        ><img id="menu-icon" src="../img/menu.png" alt="Menú"
+      /></a>
+      <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
+    </header>
+    <main>
+      <nav class="menu" id="main-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="cuentos.html">Cuentos</a></li>
+          <li><a href="novelas.html">Novelas</a></li>
+          <li class="selected"><a href="contacta.html">Contacta</a></li>
+        </ul>
+      </nav>
+
+      <h2>Formulario de Contacto</h2>
+      <form
+        action="http://www.google.es"
+        method="post"
+        name="Contact"
+        id="Contact"
+      >
+        <fieldset>
+          <legend>Rellene los Siguientes Campos</legend>
+          <div class="note">Todos los campos con * son obligatorios</div>
+          <p>
+            <label for="nombre"
+              >Nombre <abbr title="campo obligatorio">*</abbr>
+            </label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              required
+              aria-required="true"
+            />
+          </p>
+          <p>
+            <label for="apellidos">Apellidos </label>
+            <input id="apellidos" name="apellidos" type="text" />
+          </p>
+          <p>
+            <label for="Email"
+              >Correo electrónico <abbr title="campo obligatorio">*</abbr>
+            </label>
+            <input
+              id="Email"
+              name="Email"
+              type="text"
+              required
+              aria-required="true"
+            />
+          </p>
+          <p>
+            <label for="Phone"
+              >Teléfono de Contacto <abbr title="campo obligatorio">*</abbr>
+            </label>
+            <input
+              id="Phone"
+              name="Phone"
+              type="tel"
+              required
+              aria-required="true"
+            />
+          </p>
+          <p>
+            <label for="Mensaje"
+              >Mensaje <abbr title="campo obligatorio">*</abbr>
+            </label>
+            <textarea
+              id="Mensaje"
+              name="Mensaje"
+              required
+              aria-required="true"
+            ></textarea>
+          </p>
+
+          <p>
+            <button type="submit">ENVIAR</button>
+          </p>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <div class="contacto">
+        <a href="contacta.html">Contacta</a>
+        <p>
+          Alejandro Rodríguez Vignote <time datetime="2020">2020</time> -
+          <time datetime="2021">2021</time>
+        </p>
+      </div>
+
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com"
+          ><img src="../img/facebook.png" alt="Imagen de Facebook"
+        /></a>
+        <a href="https://www.twitter.com"
+          ><img src="../img/twitter.png" alt="Imagen de Twitter"
+        /></a>
+        <a href="https://www.instagram.com"
+          ><img src="../img/instagram.png" alt="Imagen de Instagram"
+        /></a>
+        <a href="https://www.youtube.com"
+          ><img src="../img/youtube.png" alt="Imagen de Youtube"
+        /></a>
+      </div>
+    </footer>
+    <script src="../js/check_form.js"></script>
+  </body>
+</html>

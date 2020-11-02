@@ -5,6 +5,7 @@
   --bg-color: rgb(251, 246, 223);
   --dark-bg-color: rgb(182, 177, 117);
   --slight-dark-bg-color: rgb(195, 192, 156);
+  --slight-dark-bg-color2: rgba(195, 192, 156, 0.36);
   --font-color: rgb(36, 20, 2);
 }
 
@@ -181,6 +182,48 @@ div.item div.description figure.cover {
   text-align: center;
 }
 
+/********* FORMULARIO *********/
+form legend {
+  /* ESTILO DE LAS LEGENDAS QUE AGRUPAN ELEMENTOS DE UN FORMULARIO */
+  font-size: 1.333rem; /* Tamaño referenciado al tamaño base de letra */
+}
+
+.note {
+  color: gray;
+  font-style: italic;
+  font-size: 0.8889rem;
+  margin-bottom: 30px;
+}
+
+form fieldset {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: var(--slight-dark-bg-color2);
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+form textarea {
+  height: 200px;
+}
+
+form fieldset p {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--dark-bg-color);
+  border: 1px solid var(--font-color);
+  color: white;
+  font-size: 1.222rem;
+  border-radius: 5px;
+  width: 200px;
+  align-self: center;
+}
 /*********  OTROS *********/
 a#go-to-category {
   margin-top: -5px;
