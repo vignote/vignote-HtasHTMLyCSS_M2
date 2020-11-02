@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
+:root {
+  --bg-color: rgb(251, 246, 223);
+  --dark-bg-color: rgb(182, 177, 117);
+  --slight-dark-bg-color: rgb(195, 192, 156);
+  --slight-dark-bg-color2: rgba(195, 192, 156, 0.36);
+  --font-color: rgb(36, 20, 2);
+}
+
+body {
+  color: var(--font-color);
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}
+
+/***********************************************************************************/
+/*                                      HEADER                                     */
+/***********************************************************************************/
+header {
+  background-color: var(--dark-bg-color);
+  padding: 5px 10px;
+}
+
+header img#menu-icon {
+  max-width: 25px;
+}
+
+header h1 {
+  display: inline-block;
+  font-family: 'Dancing Script', sans-serif, Courier, monospace;
+  font-weight: bold;
+  margin: 5px 5px;
+  font-size: calc(20px + 0.8vw);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Merienda One', cursive;
+  text-decoration: underline;
+}
+
+/***********************************************************************************/
+/*                                       MAIN                                      */
+/***********************************************************************************/
+main {
+  background-color: var(--bg-color);
+  grid-area: content;
+  padding: 10px 10px;
+}
+
+/*********  MENU *********/
+main nav {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+main nav#main-menu {
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  transition: all 0.5s;
+}
+
+main nav#main-menu > ul {
+  width: 200px;
+  margin-top: 35px;
+}
+
+main nav ul {
+  padding-left: 0;
+  width: 190px;
+}
+
+main nav h3 {
+  margin-bottom: 2px;
+  text-decoration: underline;
+}
+
+main nav ul li:hover {
+  background-color: var(--dark-bg-color);
+}
+
+#main-menu:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+main nav ul li {
+  list-style-type: none;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--slight-dark-bg-color);
+}
+
+main nav ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+main nav ul li.selected {
+  background-color: var(--dark-bg-color);
+  font-weight: bold;
+}
+
+.contextual-list {
+  margin-top: 10px;
+}
+
+main h2 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+/*********  INTRO *********/
+main div#intro figure#imagen-intro {
+  text-align: center;
+}
+main div#intro img {
+  max-width: 80%;
+}
+
+main div#intro h2 {
+  margin-top: 0;
+}
+
+/*********  ARTICULOS DESTACADOS *********/
+div#articulos-destacados div.articulo {
+  text-align: center;
+  margin: 0px 10px;
+}
+
+div#articulos-destacados div.articulo img {
+  max-width: 50%;
+}
+
+div#articulos-destacados div.articulo p {
+  margin-top: 0px;
+}
+
+/*********  LISTADO DE UNA CATEGORÍA *********/
+div.category-list {
+  margin-left: 15px;
+}
+div.category-list div.item {
+  list-style-type: disc;
+  display: list-item;
+}
+
+div.category-list div.item div.title {
+  font-weight: bold;
+  margin: 25px 0px 10px;
+}
+
+div.category-list div.item div.title a:hover {
+  font-size: 1.1rem;
+}
+
+div.item div.description img {
+  max-width: 50%;
+}
+
+div.item div.description figure.cover {
+  text-align: center;
+}
+
+/********* FORMULARIO *********/
+form legend {
+  /* ESTILO DE LAS LEGENDAS QUE AGRUPAN ELEMENTOS DE UN FORMULARIO */
+  font-size: 1.333rem; /* Tamaño referenciado al tamaño base de letra */
+}
+
+.note {
+  color: gray;
+  font-style: italic;
+  font-size: 0.8889rem;
+  margin-bottom: 30px;
+}
+
+form fieldset {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: var(--slight-dark-bg-color2);
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+form textarea {
+  height: 200px;
+}
+
+form fieldset p {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--dark-bg-color);
+  border: 1px solid var(--font-color);
+  color: white;
+  font-size: 1.222rem;
+  border-radius: 5px;
+  width: 200px;
+  align-self: center;
+}
+/*********  OTROS *********/
+a#go-to-category {
+  margin-top: -5px;
+  z-index: 1;
+  position: absolute;
+  text-decoration: none;
+}
+
+a#buy-button {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background-color: var(--dark-bg-color);
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+}
+
+a#buy-button:hover {
+  transform: scale(1.1);
+}
+
+figure {
+  margin: 5px;
+}
+
+/***********************************************************************************/
+/*                                      FOOTER                                     */
+/***********************************************************************************/
+footer {
+  background-color: var(--dark-bg-color);
+  padding: 10px 10px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: underline;
+  color: var(--font-color);
+}
+
+footer div.redes-sociales img {
+  max-width: 40px;
+  margin: 5px 10px;
+}
+
+/***********************************************************************************/
+a {
+  color: var(--font-color);
+}
+a:hover {
+  font-weight: bold;
+}
+a:hover img {
+  transform: scale(1.01);
+}
+
+/***********************************************************************************/
+/***********************************************************************************/
+/*                                    DESKTOP SCREEN                               */
+/***********************************************************************************/
+
+@media (min-width: 600px) {
+  header h1 {
+    text-align: center;
+    display: block;
+  }
+  /*********  MENU *********/
+
+  #hamburguer-menu {
+    display: none;
+  }
+
+  main nav {
+    opacity: 1;
+    pointer-events: auto;
+    background-color: unset;
+  }
+
+  main nav ul li:hover {
+    transform: scale(1.1);
+  }
+
+  main nav#main-menu {
+    position: initial;
+  }
+
+  main nav#main-menu ul {
+    width: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 0px 0px 30px 0px;
+  }
+
+  main > #contextual-menu {
+    top: 150px;
+  }
+
+  #go-to-category {
+    display: none;
+  }
+
+  /*********  INTRO *********/
+
+  main div#intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+  }
+
+  main div#intro img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /*********  ARTICULOS DESTACADOS *********/
+  div#articulos-destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  div#articulos-destacados div.articulo img {
+    max-width: 200px;
+  }
+
+  /*********  LISTADO CATEGORÍA *********/
+
+  div.category-list div.item div.description {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+
+  div.category-list div.item div.description img {
+    max-width: 150px;
+  }
+
+  /*********  FOOTER *********/
+
+  footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: initial;
+  }
+
+  footer div.contacto {
+    justify-self: start;
+  }
+
+  footer div.redes-sociales {
+    justify-self: end;
+  }
+}
+
+/***********************************************************************************/
+/***********************************************************************************/
+/*                                 WIDE DESKTOP SCREEN                             */
+/***********************************************************************************/
+@media (min-width: 1000px) {
+  body {
+    max-width: 1300px;
+  }
+
+  div.category-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+}
+
+
+/*# sourceMappingURL=/style.d1edd1db.css.map */
