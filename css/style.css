@@ -373,7 +373,6 @@ a:hover img {
   /*********  FOOTER *********/
 
   footer {
-    grid-area: footer;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: initial;
