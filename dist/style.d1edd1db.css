@@ -29,6 +29,7 @@ body {
 header {
   background-color: var(--dark-bg-color);
   padding: 5px 10px;
+  grid-area: header;
 }
 
 header img#menu-icon {
@@ -192,11 +193,11 @@ form legend {
   color: gray;
   font-style: italic;
   font-size: 0.8889rem;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 form fieldset {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 30px;
   background-color: var(--slight-dark-bg-color2);
@@ -254,6 +255,7 @@ figure {
 /*                                      FOOTER                                     */
 /***********************************************************************************/
 footer {
+  grid-area: footer;
   background-color: var(--dark-bg-color);
   padding: 10px 10px;
   text-align: center;
@@ -365,10 +367,14 @@ a:hover img {
     max-width: 150px;
   }
 
+  /*********  FORMULARIO *********/
+  form fieldset {
+    width: 80%;
+    max-width: 600px;
+  }
   /*********  FOOTER *********/
 
   footer {
-    grid-area: footer;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: initial;

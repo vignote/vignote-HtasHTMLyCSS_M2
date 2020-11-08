@@ -1,10 +1,10 @@
 {
   "name": "htas_html_y_css_m2",
   "version": "1.0.0",
-  "description": "Curso Herramientas HTML y CSS - Modulo 2",
+  "description": "Curso Herramientas HTML y CSS - PEC1",
   "main": "./src/index.html",
   "scripts": {
-    "parcel:dev": "parcel src/cuentos.html --open",
+    "parcel:dev": "parcel src/index.html --open",
     "parcel:build": "parcel build src/index.html",
     "clean": "rimraf dist .cache .cache-loader",
     "dev": "npm-run-all clean parcel:dev",
