@@ -30,6 +30,9 @@ header {
   background-color: var(--dark-bg-color);
   padding: 5px 10px;
   grid-area: header;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 25px auto 90px;
 }
 
 header img#menu-icon {
@@ -37,12 +40,12 @@ header img#menu-icon {
 }
 
 header h1 {
-  display: inline-block;
   font-family: 'Dancing Script', sans-serif, Courier, monospace;
   font-weight: bold;
   margin: 5px 5px;
-  font-size: calc(20px + 0.8vw);
+  font-size: 1.4rem;
   text-decoration: none;
+  vertical-align: top;
 }
 
 h1,
@@ -51,7 +54,87 @@ h3 {
   font-family: 'Merienda One', cursive;
   text-decoration: underline;
 }
+object.logo {
+  justify-self: right;
+}
 
+/******* ANIMACIÓN PARA EL LOGO DE LA PAG PPAL **********/
+text.svg_scar_disapear {
+  animation: textDraw 1.5s linear 0.5s normal forwards;
+}
+text.svg_ilde_disapear {
+  animation: textDraw 1.5s linear 1s normal forwards;
+}
+@keyframes textDraw {
+  0% {
+    font-size: 1.05rem;
+  }
+  10% {
+    font-size: 1.1rem;
+  }
+  20% {
+    font-size: 1.2rem;
+  }
+  50% {
+    font-size: 1.1rem;
+    opacity: 0.5;
+  }
+  70% {
+    font-size: 1rem;
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ellipse.svg_o_logo {
+  animation: o_animation 3s linear 2s normal forwards;
+}
+
+@keyframes o_animation {
+  0% {
+    transform: translateX(2rem);
+  }
+  25% {
+    transform: translateX(4.5rem);
+  }
+  50% {
+    transform: translateX(3.3rem);
+  }
+  50% {
+    transform: translateX(3.3rem) scale(0.9, 0.9);
+  }
+  70% {
+    transform: translateX(3.3rem) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(3.45rem) scale(0.5, 0.5);
+  }
+}
+
+rect.svg_bg_logo {
+  opacity: 0;
+  animation: logo_bg_animation 5s linear normal forwards;
+}
+
+@keyframes logo_bg_animation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /***********************************************************************************/
 /*                                       MAIN                                      */
 /***********************************************************************************/
@@ -132,11 +215,13 @@ main h2 {
 }
 
 /*********  INTRO *********/
-main div#intro figure#imagen-intro {
+main div#intro picture#imagen-intro {
+  display: block;
   text-align: center;
+  margin: 0px;
 }
 main div#intro img {
-  max-width: 80%;
+  width: 80%;
 }
 
 main div#intro h2 {
@@ -241,14 +326,37 @@ a#buy-button {
   font-weight: bold;
   text-align: center;
   margin: 20px auto;
+
+  animation: button_animation 0.5s linear 0s infinite alternate;
+}
+
+@keyframes button_animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
 a#buy-button:hover {
+  transition: 1s ease-in-out;
+  background: var(--dark-bg-color);
   transform: scale(1.1);
 }
 
 figure {
   margin: 5px;
+}
+
+div.otras_imagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+div.otras_imagenes img {
+  max-width: 100%;
 }
 
 /***********************************************************************************/
@@ -271,6 +379,14 @@ footer div.redes-sociales img {
   margin: 5px 10px;
 }
 
+img.recorteCircular {
+  clip-path: circle(50% at 50% 50%);
+}
+
+footer img:hover {
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
 /***********************************************************************************/
 a {
   color: var(--font-color);
@@ -286,11 +402,16 @@ a:hover img {
 /***********************************************************************************/
 /*                                    DESKTOP SCREEN                               */
 /***********************************************************************************/
+/*600px == 37.5em*/
+@media (min-width: 37.5em) {
+  header {
+    grid-template-columns: auto 90px;
+  }
 
-@media (min-width: 600px) {
   header h1 {
     text-align: center;
-    display: block;
+    display: inline-block;
+    width: calc(100% - 120px);
   }
   /*********  MENU *********/
 
@@ -393,7 +514,7 @@ a:hover img {
 /***********************************************************************************/
 @media (min-width: 1000px) {
   body {
-    max-width: 1300px;
+    max-width: 1000px;
   }
 
   div.category-list {

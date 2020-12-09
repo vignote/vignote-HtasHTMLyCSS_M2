@@ -14,6 +14,57 @@
         ><img id="menu-icon" src="../img/menu.png" alt="Menú"
       /></a>
       <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
+      <!--<object class="logo" type="image/svg+xml" data="../img/logo.svg"></object>-->
+      <svg width="100" height="40" xmlns="http://www.w3.org/2000/svg">
+        <rect
+          class="svg_bg_logo"
+          x="40"
+          y="0"
+          width="45"
+          height="40"
+          fill="rgb(251, 246, 223)"
+          rx="10"
+        />
+        <ellipse
+          class="svg_o_logo"
+          cx="12"
+          cy="20"
+          rx="10"
+          ry="18"
+          stroke="black"
+          stroke-width="3"
+          fill="transparent"
+        />
+        <polyline
+          class="svg_o_logo"
+          points="45 0, 57 40, 57 40, 62 25, 62 25, 68 40, 68 40, 78 0"
+          stroke="black"
+          stroke-width="3"
+          fill="transparent"
+        />
+        <text
+          class="svg_scar_disapear"
+          x="21"
+          y="40"
+          font-size="1rem"
+          text-anchor="left"
+          fill="black"
+        >
+          scar
+        </text>
+        <text
+          class="svg_ilde_disapear"
+          x="73"
+          y="40"
+          font-size="1rem"
+          text-anchor="left"
+          fill="black"
+        >
+          ilde
+        </text>
+
+        Sorry, your browser does not support SVG file.
+      </svg>
     </header>
     <main>
       <nav class="menu" id="main-menu">
@@ -26,26 +77,36 @@
       </nav>
 
       <div id="intro">
-        <figure id="imagen-intro">
-          <img src="../img/oscar_wilde.jpg" alt=" Foto de Oscar Wilde" />
-          <figcaption>Imagen de <cite lang="en">Oscar Wilde</cite></figcaption>
-        </figure>
+        <picture id="imagen-intro">
+          <source
+            media="(min-width: 1000px)"
+            srcset="../img/oscar_wilde_f3_1x.jpg 1x, ../img/oscar_wilde_f3_2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 700px)"
+            srcset="../img/oscar_wilde_f2_1x.jpg 1x, ../img/oscar_wilde_f2_2x.jpg 2x"
+          />
+          <source
+            media="(max-width: 699px)"
+            srcset="../img/oscar_wilde_f1_1x.jpg 1x, ../img/oscar_wilde_f1_2x.jpg 2x"
+          />
+          <!-- img tag for browsers that do not support picture element -->
+          <img src="../img/oscar_wilde_f1.jpg" alt=" Foto de Oscar Wilde" />
+        </picture>
         <div id="descripcion-intro">
           <h2>Una Vida Para Recordar</h2>
           <p>
-            <cite lang="en">Oscar Wilde</cite> no puede pasar al olvido, y por
-            ello hemos creado esta página para poder compartir con vosotros
-            artículos de este maravilloso autor que dejó al mundo con la boca
-            abierta por su increible ingenio y por su comportamiento fuera de lo
-            común.
+            <cite lang="en">Oscar Wilde</cite> no puede pasar al olvido, y por ello hemos creado
+            esta página para poder compartir con vosotros artículos de este maravilloso autor que
+            dejó al mundo con la boca abierta por su increible ingenio y por su comportamiento fuera
+            de lo común.
           </p>
           <p>
             <span lang="en">Oscar Fingal, O'Flahertie Wills Wilde​,</span>
-            conocido como <cite lang="en">Oscar Wilde</cite>, fue un escritor,
-            poeta y dramaturgo de origen irlandés.<span lang="en"> Wilde</span>
-            es considerado uno de los dramaturgos más destacados del Londres
-            victoriano tardío; además, fue una celebridad de la época debido a
-            su gran y aguzado ingenio.
+            conocido como <cite lang="en">Oscar Wilde</cite>, fue un escritor, poeta y dramaturgo de
+            origen irlandés.<span lang="en"> Wilde</span>
+            es considerado uno de los dramaturgos más destacados del Londres victoriano tardío;
+            además, fue una celebridad de la época debido a su gran y aguzado ingenio.
           </p>
         </div>
       </div>
@@ -96,10 +157,7 @@
         <div class="articulo">
           <a href="novelas/de_profundis.html">
             <figure>
-              <img
-                src="../img/De_profundis.jpg"
-                alt="Foto Portada De profundis"
-              />
+              <img src="../img/De_profundis.jpg" alt="Foto Portada De profundis" />
               <figcaption><cite>De profundis</cite></figcaption>
             </figure>
           </a>
