@@ -231,7 +231,6 @@ main div#intro h2 {
 /*********  ARTICULOS DESTACADOS *********/
 div#articulos-destacados div.articulo {
   text-align: center;
-  margin: 0px 10px;
 }
 
 div#articulos-destacados div.articulo img {
@@ -261,7 +260,7 @@ div.category-list div.item div.title a:hover {
 }
 
 div.item div.description img {
-  max-width: 50%;
+  max-width: 40%;
 }
 
 div.item div.description figure.cover {
@@ -349,14 +348,11 @@ figure {
   margin: 5px;
 }
 
-div.otras_imagenes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+div.otras_imagenes figure {
+  text-align: center;
 }
-
-div.otras_imagenes img {
-  max-width: 100%;
+div.otras_imagenes figure img {
+  max-width: 40%;
 }
 
 /***********************************************************************************/
@@ -402,8 +398,8 @@ a:hover img {
 /***********************************************************************************/
 /*                                    DESKTOP SCREEN                               */
 /***********************************************************************************/
-/*600px == 37.5em*/
-@media (min-width: 37.5em) {
+/*640px == 40em*/
+@media (min-width: 40em) {
   header {
     grid-template-columns: auto 90px;
   }
@@ -484,6 +480,19 @@ a:hover img {
 
   div.category-list div.item div.description img {
     max-width: 150px;
+  }
+
+  /*********  PAGINA DETALLE *********/
+
+  div.otras_imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  div.item div.description img,
+  div.otras_imagenes figure img {
+    max-width: 240px;
   }
 
   /*********  FORMULARIO *********/
