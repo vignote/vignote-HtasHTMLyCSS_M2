@@ -546,9 +546,13 @@ a.animated {
   }
 
   div.otras_imagenes figure img {
-    max-width: 100%;
+    max-width: 70%;
   }
 
+  div.otras_imagenes figure figcaption {
+    font-size: 0.65rem;
+    color: gray;
+  }
   /*********  FORMULARIO *********/
   form fieldset {
     width: 80%;
