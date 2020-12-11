@@ -32,7 +32,7 @@
         </ul>
       </nav>
 
-      <a id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
+      <a class="animated" id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
       <!-- Menú secundario al resto de páginas detalles-->
       <nav class="menu" id="contextual-menu" title="Listado de Cuentos">
         <ul class="contextual-list">
@@ -64,7 +64,20 @@
         </div>
         <div class="description">
           <figure class="cover">
-            <img src="../../img/El_crimen.jpg" alt="Foto Portada El Crimen de Lord Arthur Savile" />
+            <img
+              src="../../img/El_crimen_480.jpg"
+              alt="Foto Portada El Crimen de Lord Arthur Savile"
+              srcset="../../img/El_crimen_120.jpg 120w
+          ../../img/El_crimen_150.jpg 150w,
+          ../../img/El_crimen_200.jpg 200w,
+          ../../img/El_crimen_240.jpg 240w,
+          ../../img/El_crimen_300.jpg 300w,
+          ../../img/El_crimen_400.jpg 400w,
+          ../../img/El_crimen_480.jpg 480w
+          "
+              sizes="(max-width: 39em ) calc((100vw-30px) * 0.4),
+                240px"
+            />
             <figcaption>Portada del Libro</figcaption>
           </figure>
           <p>
@@ -91,7 +104,8 @@
         <a
           id="buy-button"
           href="https://www.casadellibro.com/libro-el-crimen-de-lord-arthur-saville-cds-sencillo-audiolibro/8436014969583/1621245"
-          >Comprar</a
+        >
+          Comprar</a
         >
 
         <div class="note">

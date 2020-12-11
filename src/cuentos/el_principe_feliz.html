@@ -32,7 +32,7 @@
         </ul>
       </nav>
 
-      <a id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
+      <a class="animated" id="go-to-category" href="../cuentos.html">&larr;&nbsp;Cuentos</a>
       <!-- Menú secundario al resto de páginas detalles-->
       <nav class="menu" id="contextual-menu" title="Listado de Cuentos">
         <ul class="contextual-list">
@@ -63,8 +63,18 @@
         <div class="description">
           <figure class="cover">
             <img
-              src="../../img/El_principe_feliz_y_otros_cuentos.jpg"
+              src="../../img/El_principe_feliz_y_otros_cuentos_480.jpg"
               alt="Foto Portada El Principe Feliz y Otros Cuentos"
+              srcset="../../img/El_principe_feliz_y_otros_cuentos_120.jpg 120w
+          ../../img/El_principe_feliz_y_otros_cuentos_150.jpg 150w,
+          ../../img/El_principe_feliz_y_otros_cuentos_200.jpg 200w,
+          ../../img/El_principe_feliz_y_otros_cuentos_240.jpg 240w,
+          ../../img/El_principe_feliz_y_otros_cuentos_300.jpg 300w,
+          ../../img/El_principe_feliz_y_otros_cuentos_400.jpg 400w,
+          ../../img/El_principe_feliz_y_otros_cuentos_480.jpg 480w
+          "
+              sizes="(max-width: 39em ) calc((100vw-30px) * 0.4),
+                 240px"
             />
             <figcaption>Portada del Libro</figcaption>
           </figure>
@@ -89,10 +99,7 @@
         </div>
 
         <a id="buy-button" href="https://www.amazon.es/dp/B007Y56986?">Comprar</a>
-        <div class="otras_imagenes">
-          <img src="../../img/golondrina.png" alt="golondrina del cuento" />
-          <img src="../../img/happyprince.jpg" alt="Caratula principe Feliz" />
-        </div>
+
         <div class="note">
           Resumen del Libro obtenido de Wikipedia bajo licencia CC:
           <a href="https://es.wikipedia.org">Wikipedia</a>
