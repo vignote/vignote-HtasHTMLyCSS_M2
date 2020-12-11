@@ -7,11 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oscar Wilde Fun Page</title>
     <link rel="stylesheet" href="/style.d1edd1db.css">
-  </head>
+  <script src="/style.d1edd1db.js"></script></head>
   <body>
     <header>
       <a href="#main-menu" id="hamburguer-menu"><img id="menu-icon" src="/menu.358f45df.png" alt="Menú"></a>
       <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
+      <!--<object class="logo" type="image/svg+xml" data="../img/logo.svg"></object>-->
+      <svg width="100" height="40" xmlns="http://www.w3.org/2000/svg">
+        <rect class="svg_bg_logo" x="40" y="0" width="45" height="40" fill="rgb(251, 246, 223)" rx="10"></rect>
+        <ellipse class="svg_o_logo" cx="12" cy="20" rx="10" ry="18" stroke="black" stroke-width="3" fill="transparent"></ellipse>
+        <polyline class="svg_o_logo" points="45 0, 57 40, 57 40, 62 25, 62 25, 68 40, 68 40, 78 0" stroke="black" stroke-width="3" fill="transparent"></polyline>
+        <text class="svg_scar_disapear" x="21" y="40" font-size="1rem" text-anchor="left" fill="black">
+          scar
+        </text>
+        <text class="svg_ilde_disapear" x="73" y="40" font-size="1rem" text-anchor="left" fill="black">
+          ilde
+        </text>
+
+        Sorry, your browser does not support SVG file.
+      </svg>
     </header>
     <main>
       <nav class="menu" id="main-menu">
@@ -24,26 +38,27 @@
       </nav>
 
       <div id="intro">
-        <figure id="imagen-intro">
-          <img src="/oscar_wilde.6ef4df3e.jpg" alt=" Foto de Oscar Wilde">
-          <figcaption>Imagen de <cite lang="en">Oscar Wilde</cite></figcaption>
-        </figure>
+        <picture id="imagen-intro">
+          <source media="(min-width: 1000px)" srcset="/oscar_wilde_f3_1x.9f834fde.jpg 1x,/oscar_wilde_f3_2x.2cf1310d.jpg 2x">
+          <source media="(min-width: 700px)" srcset="/oscar_wilde_f2_1x.09ba825d.jpg 1x,/oscar_wilde_f2_2x.0db6847c.jpg 2x">
+          <source media="(max-width: 699px)" srcset="/oscar_wilde_f1_1x.fe415cde.jpg 1x,/oscar_wilde_f1_2x.26cad4fb.jpg 2x">
+          <!-- img tag for browsers that do not support picture element -->
+          <img src="/oscar_wilde_f1.5281670b.jpg" alt=" Foto de Oscar Wilde">
+        </picture>
         <div id="descripcion-intro">
           <h2>Una Vida Para Recordar</h2>
           <p>
-            <cite lang="en">Oscar Wilde</cite> no puede pasar al olvido, y por
-            ello hemos creado esta página para poder compartir con vosotros
-            artículos de este maravilloso autor que dejó al mundo con la boca
-            abierta por su increible ingenio y por su comportamiento fuera de lo
-            común.
+            <cite lang="en">Oscar Wilde</cite> no puede pasar al olvido, y por ello hemos creado
+            esta página para poder compartir con vosotros artículos de este maravilloso autor que
+            dejó al mundo con la boca abierta por su increible ingenio y por su comportamiento fuera
+            de lo común.
           </p>
           <p>
             <span lang="en">Oscar Fingal, O'Flahertie Wills Wilde​,</span>
-            conocido como <cite lang="en">Oscar Wilde</cite>, fue un escritor,
-            poeta y dramaturgo de origen irlandés.<span lang="en"> Wilde</span>
-            es considerado uno de los dramaturgos más destacados del Londres
-            victoriano tardío; además, fue una celebridad de la época debido a
-            su gran y aguzado ingenio.
+            conocido como <cite lang="en">Oscar Wilde</cite>, fue un escritor, poeta y dramaturgo de
+            origen irlandés.<span lang="en"> Wilde</span>
+            es considerado uno de los dramaturgos más destacados del Londres victoriano tardío;
+            además, fue una celebridad de la época debido a su gran y aguzado ingenio.
           </p>
         </div>
       </div>
@@ -52,7 +67,9 @@
       <div id="articulos-destacados">
         <div class="articulo">
           <a href="/cuentos/el_fantasma.html"><figure>
-              <img src="/el_fantasma_de_canterville.ddd5e5f9.jpg" alt="Foto Portada El Fantasma de Canterville">
+              <img src="/el_fantasma_de_canterville_480.6c1068d1.jpg" alt="Foto Portada El Fantasma de Canterville" srcset="/el_fantasma_de_canterville_120.3c80b3d5.jpg 120w
+                ../img/el_fantasma_de_canterville_150.jpg 150w,/el_fantasma_de_canterville_200.1bcc9448.jpg 200w,/el_fantasma_de_canterville_240.d624e7dc.jpg 240w,/el_fantasma_de_canterville_300.c7e519b1.jpg 300w,/el_fantasma_de_canterville_400.4ce75549.jpg 400w,/el_fantasma_de_canterville_480.6c1068d1.jpg 480w" sizes="(max-width: 39em ) calc(0.5 * (100vw-30px)),
+                       200px">
               <figcaption><cite>El Fantasma de Canterville</cite></figcaption>
             </figure>
           </a>
@@ -61,7 +78,9 @@
         <div class="articulo">
           <a href="/cuentos/el_principe_feliz.html">
             <figure>
-              <img src="/El_principe_feliz_y_otros_cuentos.0bb164a1.jpg" alt="Foto Portada el principe feliz y otros cuentosº">
+              <img src="/El_principe_feliz_y_otros_cuentos_480.4bbe1b01.jpg" alt="Foto Portada El Principe Feliz y Otros Cuentos" srcset="/El_principe_feliz_y_otros_cuentos_120.0c4a3db7.jpg 120w
+                ../img/El_principe_feliz_y_otros_cuentos_150.jpg 150w,/El_principe_feliz_y_otros_cuentos_200.bbd6f7e6.jpg 200w,/El_principe_feliz_y_otros_cuentos_240.b07fd6e2.jpg 240w,/El_principe_feliz_y_otros_cuentos_300.6d1682b4.jpg 300w,/El_principe_feliz_y_otros_cuentos_400.93ab696b.jpg 400w,/El_principe_feliz_y_otros_cuentos_480.4bbe1b01.jpg 480w" sizes="(max-width: 39em ) calc(0.5 * (100vw-30px)),
+                       200px">
               <figcaption>
                 <cite>El Principe Feliz y Otros Cuentos</cite>
               </figcaption>
@@ -73,7 +92,9 @@
         <div class="articulo">
           <a href="/novelas/el_retrato_de_dorian.html">
             <figure>
-              <img src="/El_retrato_de_Dorian_Gray.05385387.jpg" alt="Foto Portada El retrato de Dorian Gray">
+              <img src="/El_retrato_de_Dorian_Gray_480.4ee0944b.jpg" alt="Foto Portada El retrato de Dorian Gray" srcset="/El_retrato_de_Dorian_Gray_120.d1bc46a8.jpg 120w
+                ../img/El_retrato_de_Dorian_Gray_150.jpg 150w,/El_retrato_de_Dorian_Gray_200.365b93b2.jpg 200w,/El_retrato_de_Dorian_Gray_240.4d085c5a.jpg 240w,/El_retrato_de_Dorian_Gray_300.356e1463.jpg 300w,/El_retrato_de_Dorian_Gray_400.891ae91f.jpg 400w,/El_retrato_de_Dorian_Gray_480.4ee0944b.jpg 480w" sizes="(max-width: 39em ) calc(0.5 * (100vw-30px)),
+                200px">
               <figcaption>
                 <cite>El Retrato de <span lang="en">Dorian Gray</span></cite>
               </figcaption>
@@ -84,7 +105,9 @@
         <div class="articulo">
           <a href="/novelas/de_profundis.html">
             <figure>
-              <img src="/De_profundis.f38a1fd0.jpg" alt="Foto Portada De profundis">
+              <img src="/De_profundis_480.fdaed704.jpg" alt="Foto Portada De profundis" srcset="/De_profundis_120.d779b66b.jpg 120w
+              ../img/De_profundis_150.jpg 150w,/De_profundis_200.422b4581.jpg 200w,/De_profundis_240.231cefdc.jpg 240w,/De_profundis_300.5b3ac7b3.jpg 300w,/De_profundis_400.4517166e.jpg 400w,/De_profundis_480.fdaed704.jpg 480w" sizes="(max-width: 39em ) calc(0.5 * (100vw-30px)),
+              200px">
               <figcaption><cite>De profundis</cite></figcaption>
             </figure>
           </a>

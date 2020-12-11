@@ -30,6 +30,9 @@ header {
   background-color: var(--dark-bg-color);
   padding: 5px 10px;
   grid-area: header;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 25px auto 90px;
 }
 
 header img#menu-icon {
@@ -37,12 +40,12 @@ header img#menu-icon {
 }
 
 header h1 {
-  display: inline-block;
   font-family: 'Dancing Script', sans-serif, Courier, monospace;
   font-weight: bold;
   margin: 5px 5px;
-  font-size: calc(20px + 0.8vw);
+  font-size: 1.4rem;
   text-decoration: none;
+  vertical-align: top;
 }
 
 h1,
@@ -50,8 +53,174 @@ h2,
 h3 {
   font-family: 'Merienda One', cursive;
   text-decoration: underline;
+  -webkit-animation: title_animation 0.5s;
+          animation: title_animation 0.5s;
 }
 
+@-webkit-keyframes title_animation {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes title_animation {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+object.logo {
+  justify-self: right;
+}
+
+/******* ANIMACIÓN PARA EL LOGO DE LA PAG PPAL **********/
+text.svg_scar_disapear {
+  -webkit-animation: textDraw 1.5s linear 0.5s normal forwards;
+          animation: textDraw 1.5s linear 0.5s normal forwards;
+}
+text.svg_ilde_disapear {
+  -webkit-animation: textDraw 1.5s linear 1s normal forwards;
+          animation: textDraw 1.5s linear 1s normal forwards;
+}
+@-webkit-keyframes textDraw {
+  0% {
+    font-size: 1.05rem;
+  }
+  10% {
+    font-size: 1.1rem;
+  }
+  20% {
+    font-size: 1.2rem;
+  }
+  50% {
+    font-size: 1.1rem;
+    opacity: 0.5;
+  }
+  70% {
+    font-size: 1rem;
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes textDraw {
+  0% {
+    font-size: 1.05rem;
+  }
+  10% {
+    font-size: 1.1rem;
+  }
+  20% {
+    font-size: 1.2rem;
+  }
+  50% {
+    font-size: 1.1rem;
+    opacity: 0.5;
+  }
+  70% {
+    font-size: 1rem;
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ellipse.svg_o_logo {
+  -webkit-animation: o_animation 3s linear 2s normal forwards;
+          animation: o_animation 3s linear 2s normal forwards;
+}
+
+@-webkit-keyframes o_animation {
+  0% {
+    transform: translateX(2rem);
+  }
+  25% {
+    transform: translateX(4.5rem);
+  }
+  50% {
+    transform: translateX(3.3rem);
+  }
+  50% {
+    transform: translateX(3.3rem) scale(0.9, 0.9);
+  }
+  70% {
+    transform: translateX(3.3rem) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(3.45rem) scale(0.5, 0.5);
+  }
+}
+
+@keyframes o_animation {
+  0% {
+    transform: translateX(2rem);
+  }
+  25% {
+    transform: translateX(4.5rem);
+  }
+  50% {
+    transform: translateX(3.3rem);
+  }
+  50% {
+    transform: translateX(3.3rem) scale(0.9, 0.9);
+  }
+  70% {
+    transform: translateX(3.3rem) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(3.45rem) scale(0.5, 0.5);
+  }
+}
+
+rect.svg_bg_logo {
+  opacity: 0;
+  -webkit-animation: logo_bg_animation 5s linear normal forwards;
+          animation: logo_bg_animation 5s linear normal forwards;
+}
+
+@-webkit-keyframes logo_bg_animation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo_bg_animation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /***********************************************************************************/
 /*                                       MAIN                                      */
 /***********************************************************************************/
@@ -132,11 +301,13 @@ main h2 {
 }
 
 /*********  INTRO *********/
-main div#intro figure#imagen-intro {
+main div#intro picture#imagen-intro {
+  display: block;
   text-align: center;
+  margin: 0px;
 }
 main div#intro img {
-  max-width: 80%;
+  width: 80%;
 }
 
 main div#intro h2 {
@@ -146,7 +317,6 @@ main div#intro h2 {
 /*********  ARTICULOS DESTACADOS *********/
 div#articulos-destacados div.articulo {
   text-align: center;
-  margin: 0px 10px;
 }
 
 div#articulos-destacados div.articulo img {
@@ -176,11 +346,40 @@ div.category-list div.item div.title a:hover {
 }
 
 div.item div.description img {
-  max-width: 50%;
+  max-width: 40%;
 }
 
 div.item div.description figure.cover {
   text-align: center;
+}
+
+div.item::marker {
+  -webkit-animation: mark_animation 1s infinite;
+          animation: mark_animation 1s infinite;
+}
+
+@-webkit-keyframes mark_animation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: var(--dark-bg-color);
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes mark_animation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: var(--dark-bg-color);
+  }
+  100% {
+    color: black;
+  }
 }
 
 /********* FORMULARIO *********/
@@ -241,14 +440,50 @@ a#buy-button {
   font-weight: bold;
   text-align: center;
   margin: 20px auto;
+  border: 1px solid rgb(128, 121, 46);
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  -webkit-animation: button_animation 1.5s infinite;
+          animation: button_animation 1.5s infinite;
 }
 
-a#buy-button:hover {
-  transform: scale(1.1);
+@-webkit-keyframes button_animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes button_animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a#buy-button:active {
+  box-shadow: unset;
 }
 
 figure {
   margin: 5px;
+}
+
+div.otras_imagenes figure {
+  text-align: center;
+}
+
+div.otras_imagenes figure img {
+  max-width: 60%;
 }
 
 /***********************************************************************************/
@@ -271,6 +506,16 @@ footer div.redes-sociales img {
   margin: 5px 10px;
 }
 
+img.recorteCircular {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+footer img:hover {
+  -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+          clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
 /***********************************************************************************/
 a {
   color: var(--font-color);
@@ -278,19 +523,55 @@ a {
 a:hover {
   font-weight: bold;
 }
+main a img {
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+}
 a:hover img {
   transform: scale(1.01);
+}
+
+a:active img {
+  box-shadow: unset;
+  transform: scale(1);
+}
+
+a.animated {
+  -webkit-animation: link_animation 1s infinite alternate;
+          animation: link_animation 1s infinite alternate;
+}
+
+@-webkit-keyframes link_animation {
+  0% {
+    color: var(--font-color);
+  }
+  100% {
+    color: rgb(153, 135, 74);
+  }
+}
+
+@keyframes link_animation {
+  0% {
+    color: var(--font-color);
+  }
+  100% {
+    color: rgb(153, 135, 74);
+  }
 }
 
 /***********************************************************************************/
 /***********************************************************************************/
 /*                                    DESKTOP SCREEN                               */
 /***********************************************************************************/
+/*640px == 40em*/
+@media (min-width: 40em) {
+  header {
+    grid-template-columns: auto 90px;
+  }
 
-@media (min-width: 600px) {
   header h1 {
     text-align: center;
-    display: block;
+    display: inline-block;
+    width: 100%;
   }
   /*********  MENU *********/
 
@@ -301,7 +582,7 @@ a:hover img {
   main nav {
     opacity: 1;
     pointer-events: auto;
-    background-color: unset;
+    background-color: var(--bg-color);
   }
 
   main nav ul li:hover {
@@ -367,6 +648,26 @@ a:hover img {
     max-width: 150px;
   }
 
+  /*********  PAGINA DETALLE *********/
+
+  div.item div.description img {
+    max-width: 240px;
+  }
+
+  div.otras_imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  div.otras_imagenes figure img {
+    max-width: 70%;
+  }
+
+  div.otras_imagenes figure figcaption {
+    font-size: 0.65rem;
+    color: gray;
+  }
   /*********  FORMULARIO *********/
   form fieldset {
     width: 80%;
@@ -393,9 +694,10 @@ a:hover img {
 /***********************************************************************************/
 /*                                 WIDE DESKTOP SCREEN                             */
 /***********************************************************************************/
-@media (min-width: 1000px) {
+/* 62em == 1000px */
+@media (min-width: 62em) {
   body {
-    max-width: 1300px;
+    max-width: 1200px;
   }
 
   div.category-list {
