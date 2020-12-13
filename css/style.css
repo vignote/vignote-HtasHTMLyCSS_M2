@@ -440,14 +440,56 @@ a:active img {
 
 a.animated {
   animation: link_animation 1s infinite alternate;
+  display: inline-block;
 }
 
 @keyframes link_animation {
   0% {
     color: var(--font-color);
   }
+  50% {
+    color: rgb(153, 135, 74);
+    transform: scale(1.03);
+  }
   100% {
     color: rgb(153, 135, 74);
+    transform: scale(1.03);
+  }
+}
+
+.typedLetter {
+  opacity: 0;
+  animation: type_letter 0.5s ease-out forwards;
+}
+
+@keyframes type_letter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.typedTitleLetter {
+  animation: type_title_letter 0.5s ease-out;
+  display: inline-block;
+  min-width: 5px;
+}
+
+@keyframes type_title_letter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+  50% {
+    color: red;
+    opacity: 1;
+  }
+  100% {
+    color: var(--font-color);
+    transform: translate3d(0, 0%, 0);
+    opacity: 1;
   }
 }
 
