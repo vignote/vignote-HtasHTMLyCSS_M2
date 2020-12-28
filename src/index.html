@@ -1,8 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <link rel="stylesheet" href="../css/style.css" as="style" />
+    <style>
+      :root {
+        --bg-color: rgb(251, 246, 223);
+        --dark-bg-color: rgb(182, 177, 117);
+        --slight-dark-bg-color: rgb(195, 192, 156);
+        --slight-dark-bg-color2: rgba(195, 192, 156, 0.36);
+        --font-color: rgb(36, 20, 2);
+      }
 
+      body {
+        color: var(--font-color);
+        margin: 0 auto;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header' 'content' 'footer';
+        grid-template-rows: auto 1fr auto;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      /***********************************************************************************/
+      /*                                      HEADER                                     */
+      /***********************************************************************************/
+      header {
+        background-color: var(--dark-bg-color);
+        padding: 5px 10px;
+        grid-area: header;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 25px auto 90px;
+      }
+
+      header img#menu-icon {
+        max-width: 25px;
+      }
+
+      header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        margin: 5px 5px;
+        font-size: 1rem;
+        text-decoration: none;
+        vertical-align: top;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: underline;
+        animation: title_animation 0.5s;
+      }
+
+      /***********************************************************************************/
+      /*                                       MAIN                                      */
+      /***********************************************************************************/
+      main {
+        background-color: var(--bg-color);
+        grid-area: content;
+        padding: 10px 10px;
+      }
+
+      /*********  MENU *********/
+      main nav {
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      main nav#main-menu {
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transition: all 0.5s;
+      }
+
+      main nav#main-menu > ul {
+        width: 200px;
+        margin-top: 35px;
+      }
+
+      main nav ul {
+        padding-left: 0;
+        width: 190px;
+      }
+      main nav ul li {
+        list-style-type: none;
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--slight-dark-bg-color);
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      }
+
+      main nav ul li a {
+        text-decoration: none;
+        color: var(--font-color);
+      }
+
+      main nav ul li.selected {
+        background-color: var(--dark-bg-color);
+        font-weight: bold;
+      }
+      main h2 {
+        text-decoration: underline;
+        text-align: center;
+      }
+
+      /*********  INTRO *********/
+      main div#intro picture#imagen-intro {
+        display: block;
+        text-align: center;
+        margin: 0px;
+      }
+
+      main div#intro img {
+        max-width: 80%;
+        height: auto;
+        aspect-ratio: attr(width) / attr(height);
+      }
+
+      main div#intro h2 {
+        margin-top: 0;
+      }
+
+      figure {
+        margin: 5px;
+      }
+
+      /***********************************************************************************/
+      /*                                      FOOTER                                     */
+      /***********************************************************************************/
+      footer {
+        grid-area: footer;
+        background-color: var(--dark-bg-color);
+        padding: 10px 10px;
+        text-align: center;
+      }
+
+      footer a {
+        text-decoration: underline;
+        color: var(--font-color);
+      }
+
+      footer div.redes-sociales img {
+        max-width: 40px;
+        margin: 5px 10px;
+      }
+
+      a {
+        color: var(--font-color);
+      }
+      main a img {
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      }
+
+      /*******????? Ppag ppal, **************/
+      rect.svg_bg_logo {
+        opacity: 0;
+        -webkit-animation: logo_bg_animation 5s linear normal forwards;
+        animation: logo_bg_animation 5s linear normal forwards;
+      }
+
+      /*********  ARTICULOS DESTACADOS *********/
+      div#articulos-destacados div.articulo {
+        text-align: center;
+      }
+
+      div#articulos-destacados div.articulo img {
+        max-width: 50%;
+        height: auto;
+        aspect-ratio: attr(width) / attr(height);
+      }
+
+      div#articulos-destacados div.articulo p {
+        margin-top: 0px;
+      }
+      /******* ANIMACIÓN PARA EL LOGO DE LA PAG PPAL **********/
+      text.svg_scar_disapear {
+        -webkit-animation: textDraw 1.5s linear 0.5s normal forwards;
+        animation: textDraw 1.5s linear 0.5s normal forwards;
+      }
+
+      text.svg_ilde_disapear {
+        -webkit-animation: textDraw 1.5s linear 1s normal forwards;
+        animation: textDraw 1.5s linear 1s normal forwards;
+      }
+      main img {
+        background-color: #ccc;
+      }
+    </style>
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../fonts/montserrat-v15-latin-800.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../fonts/open-sans-v18-latin-regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="../css/desktop.css"
+      media="(min-width:40em)"
+      onload="this.onload=null; this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="../css/nocritical.css"
+      onload="this.onload=null; this.rel='stylesheet'"
+    />
+    <link rel="preload" as="image" href="../img/menu.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="../img/oscar_wilde2_f1_1x.jpg"
+      media="(max-width: 449px)"
+    />
+    <link rel="stylesheet" href="../css/nocritical.css" />
+    <link rel="stylesheet" href="../css/desktop.css" media="(min-width:40em)" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="description" content="Página de Fans de Oscar Wilde" />
     <meta name="author" content="Alejandro Rodriguez Vignote" />
@@ -12,7 +242,7 @@
   <body>
     <header>
       <a href="#main-menu" id="hamburguer-menu"
-        ><img id="menu-icon" src="../img/menu.png" alt="Menú"
+        ><img loading="lazy" width="25" height="25" id="menu-icon" src="../img/menu.png" alt="Menú"
       /></a>
       <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
       <!--<object class="logo" type="image/svg+xml" data="../img/logo.svg"></object>-->
@@ -79,15 +309,25 @@
         <picture id="imagen-intro">
           <source
             media="(min-width: 1000px)"
-            srcset="../img/oscar_wilde_f3_1x.jpg 1x, ../img/oscar_wilde_f3_2x.jpg 2x"
+            srcset="../img/oscar_wilde2_f3_1x.jpg 1x, ../img/oscar_wilde2_f3_2x.jpg 2x"
           />
           <source
             media="(min-width: 700px)"
-            srcset="../img/oscar_wilde_f2_1x.jpg 1x, ../img/oscar_wilde_f2_2x.jpg 2x"
+            srcset="../img/oscar_wilde2_f2_1x.jpg 1x, ../img/oscar_wilde2_f2_2x.jpg 2x"
           />
-          <source media="(max-width: 699px)" srcset="../img/oscar_wilde_f1_1x.jpg" />
+          <source
+            media="(min-width: 450px)"
+            srcset="../img/oscar_wilde2_f1_1x.jpg 1x, ../img/oscar_wilde2_f1_2x.jpg 2x"
+          />
+          <source media="(max-width: 449px)" srcset="../img/oscar_wilde2_f1_1x.jpg" />
           <!-- img tag for browsers that do not support picture element -->
-          <img src="../img/oscar_wilde_f1.jpg" alt=" Foto de Oscar Wilde" />
+          <img
+            src="../img/oscar_wilde2_f2_1x.jpg"
+            width="221"
+            height="260"
+            alt=" Foto de Oscar Wilde"
+            sizes="(max-width: 39.9em ) calc(0.8 * (100vw-20px)),(max-width: 61.9em ) calc((100vw-35px)/3),(min-width: 62em ) 321.66px "
+          />
         </picture>
         <div id="descripcion-intro">
           <h2>Una Vida Para Recordar</h2>
@@ -113,18 +353,21 @@
           <a href="cuentos/el_fantasma.html"
             ><figure>
               <img
-                src="../img/el_fantasma_de_canterville_200.jpg"
+                src="../img/el_fantasma_de_canterville_150.jpg"
+                width="480"
+                height="715"
                 alt="Foto Portada El Fantasma de Canterville"
                 srcset="
                   ../img/el_fantasma_de_canterville_120.jpg 120w,
                   ../img/el_fantasma_de_canterville_150.jpg 150w,
+                  ../img/el_fantasma_de_canterville_180.jpg 180w,
                   ../img/el_fantasma_de_canterville_200.jpg 200w,
                   ../img/el_fantasma_de_canterville_240.jpg 240w,
                   ../img/el_fantasma_de_canterville_300.jpg 300w,
                   ../img/el_fantasma_de_canterville_400.jpg 400w,
                   ../img/el_fantasma_de_canterville_480.jpg 480w
                 "
-                sizes="(max-width: 39.9em ) calc(0.5 * (100vw-30px)),
+                sizes="(max-width: 39.9px ) 45vw,
                        200px"
               />
               <figcaption><cite>El Fantasma de Canterville</cite></figcaption>
@@ -136,7 +379,10 @@
           <a href="cuentos/el_principe_feliz.html">
             <figure>
               <img
-                src="../img/El_principe_feliz_y_otros_cuentos_200.jpg"
+                loading="lazy"
+                src="../img/El_principe_feliz_y_otros_cuentos_150.jpg"
+                width="480"
+                height="715"
                 alt="Foto Portada El Principe Feliz y Otros Cuentos"
                 srcset="
                   ../img/El_principe_feliz_y_otros_cuentos_120.jpg 120w,
@@ -162,7 +408,10 @@
           <a href="novelas/el_retrato_de_dorian.html">
             <figure>
               <img
+                loading="lazy"
                 src="../img/El_retrato_de_Dorian_Gray_200.jpg"
+                width="480"
+                height="715"
                 alt="Foto Portada El retrato de Dorian Gray"
                 srcset="
                   ../img/El_retrato_de_Dorian_Gray_120.jpg 120w,
@@ -187,7 +436,10 @@
           <a href="novelas/de_profundis.html">
             <figure>
               <img
+                loading="lazy"
                 src="../img/De_profundis_200.jpg"
+                width="480"
+                height="715"
                 alt="Foto Portada De profundis"
                 srcset="
                   ../img/De_profundis_120.jpg 120w,
@@ -220,16 +472,36 @@
 
       <div class="redes-sociales">
         <a href="https://www.facebook.com"
-          ><img src="../img/facebook.png" alt="Imagen de Facebook"
+          ><img
+            loading="lazy"
+            src="../img/facebook.png"
+            width="40"
+            height="40"
+            alt="Imagen de Facebook"
         /></a>
         <a href="https://www.twitter.com"
-          ><img src="../img/twitter.png" alt="Imagen de Twitter"
+          ><img
+            loading="lazy"
+            src="../img/twitter.png"
+            width="40"
+            height="40"
+            alt="Imagen de Twitter"
         /></a>
         <a href="https://www.instagram.com"
-          ><img src="../img/instagram.png" alt="Imagen de Instagram"
+          ><img
+            loading="lazy"
+            src="../img/instagram.png"
+            width="40"
+            height="40"
+            alt="Imagen de Instagram"
         /></a>
         <a href="https://www.youtube.com"
-          ><img src="../img/youtube.png" alt="Imagen de Youtube"
+          ><img
+            loading="lazy"
+            src="../img/youtube.png"
+            width="40"
+            height="40"
+            alt="Imagen de Youtube"
         /></a>
       </div>
     </footer>
