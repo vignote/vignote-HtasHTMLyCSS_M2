@@ -42,9 +42,6 @@ main nav ul li:active {
   box-shadow: unset;
   transform: scale(1);
 }
-.contextual-list {
-  margin-top: 10px;
-}
 
 img.recorteCircular {
   -webkit-clip-path: circle(50% at 50% 50%);
@@ -67,6 +64,16 @@ a:hover img {
 a:active img {
   box-shadow: unset;
   transform: scale(1);
+}
+
+/*********  LISTADO DE UNA CATEGORÍA *********/
+div.category-list div.item div.title a:hover {
+  font-size: 1.1rem;
+}
+
+/****** DETALLES DE UN LIBRO *******/
+a#buy-button:active {
+  box-shadow: unset;
 }
 
 /* ANIMATIONS KEYFRAMES */
@@ -274,11 +281,6 @@ div.item::marker {
   }
 }
 
-a#buy-button {
-  -webkit-animation: button_animation 1.5s infinite;
-  animation: button_animation 1.5s infinite;
-}
-
 @-webkit-keyframes button_animation {
   0% {
     opacity: 1;
@@ -305,12 +307,6 @@ a#buy-button {
   100% {
     opacity: 1;
   }
-}
-
-a.animated {
-  -webkit-animation: link_animation 1s infinite alternate;
-  animation: link_animation 1s infinite alternate;
-  display: inline-block;
 }
 
 @-webkit-keyframes link_animation {
@@ -345,12 +341,6 @@ a.animated {
   }
 }
 
-.typedLetter {
-  opacity: 0;
-  -webkit-animation: type_letter 0.5s ease-out forwards;
-  animation: type_letter 0.5s ease-out forwards;
-}
-
 @-webkit-keyframes type_letter {
   0% {
     opacity: 0;
@@ -369,13 +359,6 @@ a.animated {
   100% {
     opacity: 1;
   }
-}
-
-.typedTitleLetter {
-  -webkit-animation: type_title_letter 0.5s ease-out;
-  animation: type_title_letter 0.5s ease-out;
-  display: inline-block;
-  min-width: 5px;
 }
 
 @-webkit-keyframes type_title_letter {

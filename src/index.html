@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- PRELOADS  -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../fonts/montserrat-v15-latin-800.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../fonts/open-sans-v18-latin-regular.woff2"
+      crossorigin
+    />
+    <link rel="preload" as="style" href="../css/desktop.css" media="(min-width:40em)" />
+    <link rel="preload" as="style" href="../css/nocritical.css" />
+
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="../img/oscar_wilde2_f3_1x.jpg 1x, ../img/oscar_wilde2_f3_2x.jpg 2x"
+      media="(min-width: 1000px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="../img/oscar_wilde2_f2_1x.jpg 1x, ../img/oscar_wilde2_f2_2x.jpg 2x"
+      media="(min-width: 700px) and (max-width: 999px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="../img/oscar_wilde2_f1_1x.jpg 1x, ../img/oscar_wilde2_f1_2x.jpg 2x"
+      media="(min-width: 450px) and (max-width: 699px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../img/oscar_wilde2_f1_mvl_1x.jpg"
+      media="(max-width: 449px)"
+    />
+    <link rel="preload" as="image" href="../img/menu.png" />
+
+    <!-- CSS CRÍTICO -->
     <style>
       :root {
         --bg-color: rgb(251, 246, 223);
@@ -22,6 +69,9 @@
         font-family: 'Open Sans', sans-serif;
       }
 
+      img {
+        aspect-ratio: attr(width) / attr(height);
+      }
       /***********************************************************************************/
       /*                                      HEADER                                     */
       /***********************************************************************************/
@@ -63,7 +113,9 @@
         grid-area: content;
         padding: 10px 10px;
       }
-
+      main img {
+        background-color: var(--slight-dark-bg-color);
+      }
       /*********  MENU *********/
       main nav {
         opacity: 0;
@@ -193,50 +245,18 @@
         -webkit-animation: textDraw 1.5s linear 1s normal forwards;
         animation: textDraw 1.5s linear 1s normal forwards;
       }
-      main img {
-        background-color: #ccc;
+
+      ellipse.svg_o_logo {
+        animation: o_animation 3s linear 2s normal forwards;
       }
     </style>
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="../fonts/montserrat-v15-latin-800.woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="../fonts/open-sans-v18-latin-regular.woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      as="style"
-      href="../css/desktop.css"
-      media="(min-width:40em)"
-      onload="this.onload=null; this.rel='stylesheet'"
-    />
-    <link
-      rel="preload"
-      as="style"
-      href="../css/nocritical.css"
-      onload="this.onload=null; this.rel='stylesheet'"
-    />
-    <link rel="preload" as="image" href="../img/menu.png" />
-    <link
-      rel="preload"
-      as="image"
-      href="../img/oscar_wilde2_f1_1x.jpg"
-      media="(max-width: 449px)"
-    />
+
     <link rel="stylesheet" href="../css/nocritical.css" />
     <link rel="stylesheet" href="../css/desktop.css" media="(min-width:40em)" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="description" content="Página de Fans de Oscar Wilde" />
     <meta name="author" content="Alejandro Rodriguez Vignote" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Oscar Wilde Fun Page</title>
   </head>
   <body>
@@ -319,14 +339,14 @@
             media="(min-width: 450px)"
             srcset="../img/oscar_wilde2_f1_1x.jpg 1x, ../img/oscar_wilde2_f1_2x.jpg 2x"
           />
-          <source media="(max-width: 449px)" srcset="../img/oscar_wilde2_f1_1x.jpg" />
+          <source media="(max-width: 449px)" srcset="../img/oscar_wilde2_f1_mvl_1x.jpg" />
           <!-- img tag for browsers that do not support picture element -->
           <img
             src="../img/oscar_wilde2_f2_1x.jpg"
             width="221"
             height="260"
             alt=" Foto de Oscar Wilde"
-            sizes="(max-width: 39.9em ) calc(0.8 * (100vw-20px)),(max-width: 61.9em ) calc((100vw-35px)/3),(min-width: 62em ) 321.66px "
+            sizes="(max-width: 39.9em ) 80vw,(max-width: 61.9em ) 25vw, (min-width: 62em ) 321.66px "
           />
         </picture>
         <div id="descripcion-intro">
@@ -353,6 +373,7 @@
           <a href="cuentos/el_fantasma.html"
             ><figure>
               <img
+                loading="lazy"
                 src="../img/el_fantasma_de_canterville_150.jpg"
                 width="480"
                 height="715"
@@ -367,7 +388,7 @@
                   ../img/el_fantasma_de_canterville_400.jpg 400w,
                   ../img/el_fantasma_de_canterville_480.jpg 480w
                 "
-                sizes="(max-width: 39.9px ) 45vw,
+                sizes="(max-width: 39.9em ) 50vw,
                        200px"
               />
               <figcaption><cite>El Fantasma de Canterville</cite></figcaption>
@@ -393,7 +414,7 @@
                   ../img/El_principe_feliz_y_otros_cuentos_400.jpg 400w,
                   ../img/El_principe_feliz_y_otros_cuentos_480.jpg 480w
                 "
-                sizes="(max-width: 39.9em ) calc(0.5 * (100vw-30px)),
+                sizes="(max-width: 39.9em ) 50vw,
                        200px"
               />
               <figcaption>
@@ -422,7 +443,7 @@
                   ../img/El_retrato_de_Dorian_Gray_400.jpg 400w,
                   ../img/El_retrato_de_Dorian_Gray_480.jpg 480w
                 "
-                sizes="(max-width: 39.9em ) calc(0.5 * (100vw-30px)),
+                sizes="(max-width: 39.9em )  50vw,
                 200px"
               />
               <figcaption>
@@ -450,7 +471,7 @@
                   ../img/De_profundis_400.jpg 400w,
                   ../img/De_profundis_480.jpg 480w
                 "
-                sizes="(max-width: 39.9em ) calc(0.5 * (100vw-30px)),
+                sizes="(max-width: 39.9em )  50vw,
               200px"
               />
               <figcaption><cite>De profundis</cite></figcaption>
