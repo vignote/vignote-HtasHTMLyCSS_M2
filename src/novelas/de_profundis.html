@@ -1,21 +1,279 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- PRELOADS  -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../../fonts/montserrat-v15-latin-800.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="../../fonts/open-sans-v18-latin-regular.woff2"
+      crossorigin
+    />
+    <link rel="preload" as="style" href="../../css/desktop.css" media="(min-width:40em)" />
+    <link rel="preload" as="style" href="../../css/nocritical.css" />
+
+    <link rel="preload" as="image" href="../../img/menu.png" />
+    <link rel="preload" as="image" href="../../img/logo.svg" />
+    <link
+      rel="preload"
+      as="image"
+      href="../../img/El_crimen_480.jpg"
+      imagesrcset="
+      ../../img/De_profundis_120.jpg 120w,
+      ../../img/De_profundis_150.jpg 150w,
+      ../../img/De_profundis_200.jpg 200w,
+      ../../img/De_profundis_240.jpg 240w,
+      ../../img/De_profundis_300.jpg 300w,
+      ../../img/De_profundis_400.jpg 400w,
+      ../../img/De_profundis_480.jpg 480w
+    "
+      imagesizes="(max-width: 39.9em ) 35vw, 240px"
+    />
+    <!-- CSS CRÍTICO -->
+    <style>
+      :root {
+        --bg-color: rgb(251, 246, 223);
+        --dark-bg-color: rgb(182, 177, 117);
+        --slight-dark-bg-color: rgb(195, 192, 156);
+        --slight-dark-bg-color2: rgba(195, 192, 156, 0.36);
+        --font-color: rgb(36, 20, 2);
+      }
+
+      body {
+        color: var(--font-color);
+        margin: 0 auto;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header' 'content' 'footer';
+        grid-template-rows: auto 1fr auto;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      img {
+        aspect-ratio: attr(width) / attr(height);
+      }
+
+      div.item div.description figure.cover {
+        text-align: center;
+      }
+
+      /***********************************************************************************/
+      /*                                      HEADER                                     */
+      /***********************************************************************************/
+      header {
+        background-color: var(--dark-bg-color);
+        padding: 5px 10px;
+        grid-area: header;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 25px auto 90px;
+      }
+
+      header img#menu-icon {
+        max-width: 25px;
+      }
+
+      header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        margin: 5px 5px;
+        font-size: 1rem;
+        text-decoration: none;
+        vertical-align: top;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: underline;
+        animation: title_animation 0.5s;
+      }
+
+      /***********************************************************************************/
+      /*                                       MAIN                                      */
+      /***********************************************************************************/
+      main {
+        background-color: var(--bg-color);
+        grid-area: content;
+        padding: 10px 10px;
+      }
+      main .description img {
+        background-color: var(--slight-dark-bg-color);
+      }
+      /*********  MENU *********/
+      main nav {
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      main nav#main-menu {
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transition: all 0.5s;
+      }
+
+      main nav#main-menu > ul {
+        width: 200px;
+        margin-top: 35px;
+      }
+
+      main nav ul {
+        padding-left: 0;
+        width: 190px;
+      }
+      main nav ul li {
+        list-style-type: none;
+        border: 1px solid black;
+        padding: 5px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--slight-dark-bg-color);
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      }
+
+      main nav ul li a {
+        text-decoration: none;
+        color: var(--font-color);
+      }
+
+      main nav ul li.selected {
+        background-color: var(--dark-bg-color);
+        font-weight: bold;
+      }
+      main h2 {
+        text-decoration: underline;
+        text-align: center;
+      }
+
+      figure {
+        margin: 5px;
+      }
+      div.item div.description img {
+        max-width: 40%;
+        height: auto;
+      }
+
+      /***********************************************************************************/
+      /*                                      FOOTER                                     */
+      /***********************************************************************************/
+      footer {
+        grid-area: footer;
+        background-color: var(--dark-bg-color);
+        padding: 10px 10px;
+        text-align: center;
+      }
+
+      footer a {
+        text-decoration: underline;
+        color: var(--font-color);
+      }
+
+      footer div.redes-sociales img {
+        max-width: 40px;
+        margin: 5px 10px;
+      }
+
+      a {
+        color: var(--font-color);
+      }
+
+      /******************* DETALLES ********************/
+      a#go-to-category {
+        margin-top: -5px;
+        z-index: 1;
+        position: absolute;
+        text-decoration: none;
+      }
+
+      a#buy-button {
+        display: block;
+        width: 100px;
+        padding: 10px;
+        background-color: var(--dark-bg-color);
+        font-weight: bold;
+        text-align: center;
+        margin: 20px auto;
+        border: 1px solid rgb(128, 121, 46);
+        box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      }
+
+      div.otras_imagenes figure {
+        text-align: center;
+      }
+
+      div.otras_imagenes figure img {
+        max-width: 60%;
+        height: auto;
+      }
+
+      .contextual-list {
+        margin-top: 10px;
+      }
+
+      /************** ANIMACIONES ************/
+
+      .typedLetter {
+        opacity: 0;
+        -webkit-animation: type_letter 0.5s ease-out forwards;
+        animation: type_letter 0.5s ease-out forwards;
+      }
+      a.animated {
+        -webkit-animation: link_animation 1s infinite alternate;
+        animation: link_animation 1s infinite alternate;
+        display: inline-block;
+      }
+
+      a#buy-button {
+        -webkit-animation: button_animation 1.5s infinite;
+        animation: button_animation 1.5s infinite;
+      }
+    </style>
+
+    <link rel="stylesheet" href="../../css/nocritical.css" />
+    <link rel="stylesheet" href="../../css/desktop.css" media="(min-width:40em)" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="description" content="Libro 'De profundis' escrito por Oscar Wilde" />
     <meta name="author" content="Alejandro Rodriguez Vignote" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>De profundis de Oscar Wilde</title>
-    <link rel="stylesheet" href="../../css/style.css" />
   </head>
   <body>
     <header>
       <a href="#main-menu" id="hamburguer-menu"
-        ><img id="menu-icon" src="../../img/menu.png" alt="Menú"
+        ><img
+          loading="lazy"
+          id="menu-icon"
+          width="25"
+          height="25"
+          src="../../img/menu.png"
+          alt="Menú"
       /></a>
       <h1>El Mundo de <cite lang="en">Oscar Wilde</cite></h1>
-      <img src="../../img/logo.svg" alt="Logo de la Pagina Web" />
+      <img
+        loading="lazy"
+        src="../../img/logo.svg"
+        width="90"
+        height="40"
+        alt="Logo de la Pagina Web"
+      />
     </header>
+
     <main>
       <!-- Menú Principal -->
       <nav class="menu" id="main-menu">
@@ -55,8 +313,11 @@
         <div class="description">
           <figure class="cover">
             <img
+              loading="lazy"
               src="../../img/De_profundis_480.jpg"
               alt="Foto Portada Libro De profundis"
+              width="480"
+              height="715"
               srcset="
                 ../../img/De_profundis_120.jpg 120w,
                 ../../img/De_profundis_150.jpg 150w,
@@ -66,8 +327,7 @@
                 ../../img/De_profundis_400.jpg 400w,
                 ../../img/De_profundis_480.jpg 480w
               "
-              sizes="(max-width: 39.9em ) calc((100vw-30px) * 0.4),
-               240px"
+              sizes="(max-width: 39.9em ) 35vw, 240px"
             />
             <figcaption>Portada del Libro</figcaption>
           </figure>
@@ -118,7 +378,10 @@
                 srcset="../../img/reflexiones_1F_1x.jpg 1x, ../../img/reflexiones_1F_2x.jpg 2x"
               />
               <img
+                loading="lazy"
                 src="../../img/reflexiones_2F_1x.jpg"
+                width="490"
+                height="490"
                 alt=" Foto Escribiendo reflexiones Wilde"
               />
             </picture>
@@ -131,7 +394,13 @@
             <picture>
               <source srcset="../../img/writing.webp" type="image/webp" />
               <source srcset="../../img/writing.png" type="image/png" />
-              <img src="../../img/writing.png" alt="Foto pluma" />
+              <img
+                loading="lazy"
+                src="../../img/writing.png"
+                alt="Foto pluma"
+                width="406"
+                height="357"
+              />
             </picture>
 
             <figcaption>
@@ -156,16 +425,36 @@
 
       <div class="redes-sociales">
         <a href="https://www.facebook.com"
-          ><img src="../../img/facebook.png" alt="Imagen de Facebook"
+          ><img
+            loading="lazy"
+            src="../../img/facebook.png"
+            alt="Imagen de Facebook"
+            width="40"
+            height="40"
         /></a>
         <a href="https://www.twitter.com"
-          ><img src="../../img/twitter.png" alt="Imagen de Twitter"
+          ><img
+            loading="lazy"
+            src="../../img/twitter.png"
+            alt="Imagen de Twitter"
+            width="40"
+            height="40"
         /></a>
         <a href="https://www.instagram.com"
-          ><img src="../../img/instagram.png" alt="Imagen de Instagram"
+          ><img
+            loading="lazy"
+            src="../../img/instagram.png"
+            alt="Imagen de Instagram"
+            width="40"
+            height="40"
         /></a>
         <a href="https://www.youtube.com"
-          ><img src="../../img/youtube.png" alt="Imagen de Youtube"
+          ><img
+            loading="lazy"
+            src="../../img/youtube.png"
+            alt="Imagen de Youtube"
+            width="40"
+            height="40"
         /></a>
       </div>
     </footer>
